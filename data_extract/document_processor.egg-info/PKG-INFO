@@ -1,0 +1,1139 @@
+Metadata-Version: 2.1
+Name: document_processor
+Version: 0.8.0
+Summary: Advanced document processing platform with enhanced sentiment analysis, content extraction, and intelligent text processing capabilities
+Author: OpenHands
+Author-email: OpenHands <openhands@all-hands.dev>
+Maintainer-email: OpenHands <openhands@all-hands.dev>
+License: Proprietary
+Project-URL: Documentation, https://github.com/it4444/data_hands_extract/wiki
+Project-URL: Source, https://github.com/it4444/data_hands_extract
+Project-URL: Issues, https://github.com/it4444/data_hands_extract/issues
+Keywords: document-processing,text-extraction,pdf,docx,xlsx,google-workspace
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Text Processing :: General
+Classifier: Topic :: Office/Business
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: pydantic>=2.5.2
+Requires-Dist: rich>=13.7.0
+Requires-Dist: tqdm>=4.66.1
+Requires-Dist: psutil>=5.9.0
+Requires-Dist: structlog>=23.2.0
+Requires-Dist: python-json-logger>=2.0.7
+Requires-Dist: prometheus-client>=0.19.0
+Requires-Dist: py-cpuinfo>=9.0.0
+Requires-Dist: memory-profiler>=0.61.0
+Requires-Dist: langchain-core>=0.1.0
+Requires-Dist: langchain-community>=0.0.16
+Requires-Dist: langchain-text-splitters>=0.0.1
+Requires-Dist: langchain-openai>=0.0.3
+Requires-Dist: chromadb>=0.5.17
+Requires-Dist: tiktoken>=0.5.1
+Requires-Dist: python-docx>=1.0.0
+Requires-Dist: docx2txt>=0.8
+Requires-Dist: pypdf>=3.17.1
+Requires-Dist: python-pptx>=0.6.21
+Requires-Dist: openpyxl>=3.1.2
+Requires-Dist: python-magic>=0.4.27
+Requires-Dist: chardet>=5.2.0
+Requires-Dist: markdown>=3.7.0
+Requires-Dist: striprtf>=0.0.27
+Requires-Dist: unstructured>=0.10.30
+Requires-Dist: pdf2image>=1.16.3
+Requires-Dist: pytesseract>=0.3.10
+Requires-Dist: tabula-py>=2.9.0
+Requires-Dist: pdfminer.six>=20221105
+Requires-Dist: mammoth>=1.6.0
+Requires-Dist: icalendar>=5.0.11
+Requires-Dist: beautifulsoup4>=4.12.2
+Requires-Dist: html2text>=2020.1.16
+Requires-Dist: email-validator>=2.1.0.post1
+Requires-Dist: nltk>=3.9.1
+Requires-Dist: spacy>=3.8.2
+Requires-Dist: dateparser>=1.2.0
+Requires-Dist: ftfy>=6.1.1
+Requires-Dist: transformers>=4.45.2
+Requires-Dist: torch>=2.5.1
+Requires-Dist: sentence-transformers>=2.2.2
+Requires-Dist: networkx>=3.2.1
+Requires-Dist: textblob>=0.18.0
+Requires-Dist: blis>=1.0.1
+Requires-Dist: thinc>=8.3.2
+Requires-Dist: wasabi>=1.1.3
+Requires-Dist: srsly>=2.4.8
+Requires-Dist: catalogue>=2.0.10
+Requires-Dist: preshed>=3.0.9
+Requires-Dist: pandas>=2.1.4
+Requires-Dist: numpy>=1.26.2
+Requires-Dist: textblob>=0.17.1
+Requires-Dist: cleantext>=1.1.4
+Requires-Dist: lxml>=4.9.3
+Requires-Dist: html5lib>=1.1
+Requires-Dist: w3lib>=2.1.2
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: pytz>=2023.3
+Requires-Dist: validators>=0.22.0
+Requires-Dist: aiofiles>=23.2.1
+Requires-Dist: tenacity>=8.2.3
+Provides-Extra: test
+Requires-Dist: pytest==8.3.3; extra == "test"
+Requires-Dist: pytest-cov==6.0.0; extra == "test"
+Requires-Dist: pytest-asyncio==0.24.0; extra == "test"
+Requires-Dist: pytest-xdist==3.5.0; extra == "test"
+Requires-Dist: pytest-timeout==2.2.0; extra == "test"
+Requires-Dist: pytest-mock==3.12.0; extra == "test"
+Requires-Dist: pytest-randomly==3.15.0; extra == "test"
+Requires-Dist: pytest-sugar==1.0.0; extra == "test"
+Requires-Dist: pytest-clarity==1.0.1; extra == "test"
+Requires-Dist: pytest-reportlog==0.3.0; extra == "test"
+Requires-Dist: pytest-html==4.1.1; extra == "test"
+Requires-Dist: pytest-metadata==3.0.0; extra == "test"
+Requires-Dist: coverage[toml]>=7.4.3; extra == "test"
+Requires-Dist: faker==24.2.0; extra == "test"
+Requires-Dist: hypothesis==6.98.8; extra == "test"
+Requires-Dist: factory-boy==3.3.0; extra == "test"
+Provides-Extra: dev
+Requires-Dist: black==24.2.0; extra == "dev"
+Requires-Dist: isort==5.13.2; extra == "dev"
+Requires-Dist: mypy==1.8.0; extra == "dev"
+Requires-Dist: ruff==0.3.0; extra == "dev"
+Requires-Dist: pylint==3.0.3; extra == "dev"
+Requires-Dist: bandit==1.7.7; extra == "dev"
+Requires-Dist: safety==2.3.5; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx==7.2.6; extra == "docs"
+Requires-Dist: sphinx-rtd-theme==2.0.0; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints==2.0.0; extra == "docs"
+Requires-Dist: sphinx-copybutton==0.5.2; extra == "docs"
+Requires-Dist: myst-parser==2.0.0; extra == "docs"
+Provides-Extra: monitoring
+Requires-Dist: prometheus-client>=0.19.0; extra == "monitoring"
+Requires-Dist: py-cpuinfo>=9.0.0; extra == "monitoring"
+Requires-Dist: memory-profiler>=0.61.0; extra == "monitoring"
+
+# Document Processing Platform
+
+## Overview
+An advanced document processing platform designed for extracting, processing, and structuring content from various document formats. The platform uses LangChain for document handling and implements a modular architecture for extensibility, with special support for Google Workspace documents and batch processing capabilities.
+
+## Architecture
+
+### Core Components
+
+1. **Base Processing** (`document_processor/core/base.py`)
+   - Abstract base classes and interfaces
+   - Standard processing configurations
+   - Error handling and result models
+   - Processing lifecycle management
+
+2. **Data Models** (`document_processor/core/models.py`)
+   - Document type definitions
+   - Processing status tracking
+   - Metadata models
+   - Result schemas
+
+3. **Resource Management** (`document_processor/core/monitoring.py`)
+   - System resource monitoring
+   - Performance metrics collection
+   - Resource pressure detection
+   - Optimization recommendations
+
+4. **Processing Optimization** (`document_processor/core/optimization.py`)
+   - Resource-aware processing
+   - Adaptive batch sizing
+   - Parallel processing management
+   - Profile-based configuration
+
+### Document Processors
+
+1. **PDF Processing**
+   - Text extraction with layout preservation
+   - Table and column structure detection
+   - Image detection and OCR support
+   - Form field recognition
+   - Resource usage tracking
+   - Processing optimization
+   - Configurable settings
+
+2. **Office Documents**
+   - DOCX: Rich text and formatting
+   - XLSX: Table structure preservation
+   - PPTX: Slide content extraction
+
+3. **Web Content**
+   - HTML/XML parsing
+   - Metadata extraction
+   - Structure preservation
+   - Link analysis
+
+4. **Email & Calendar**
+   - Email thread analysis
+   - Attachment handling
+   - Calendar event processing
+   - Contact information extraction
+
+## Features
+
+### Core Capabilities
+
+1. **Resource Optimization**
+   - Dynamic worker allocation
+   - Adaptive chunk sizing
+   - I/O throttling
+   - Memory management
+
+2. **Parallel Processing**
+   - Multi-process execution
+   - Thread pool management
+   - Progress tracking
+   - Checkpointing
+
+3. **Content Analysis**
+   - Text classification
+   - Entity extraction
+   - Relationship mapping
+   - Sentiment analysis
+
+4. **Batch Processing**
+   - Directory monitoring
+   - Profile-based processing
+   - Progress reporting
+   - Error recovery
+
+### Advanced Features
+
+1. **Resource Management**
+```python
+from document_processor.core.monitoring import ResourceMonitor
+from document_processor.core.optimization import ProcessingOptimizer
+
+# Initialize resource monitoring
+monitor = ResourceMonitor(
+    high_memory_threshold=85.0,  # Memory threshold (%)
+    high_cpu_threshold=90.0,     # CPU threshold (%)
+    metrics_interval=1.0         # Metrics collection interval
+)
+
+# Create optimizer
+optimizer = ProcessingOptimizer(
+    monitor=monitor,
+    config={
+        "initial_workers": 4,
+        "min_workers": 1,
+        "max_workers": 8,
+        "adaptive_chunk_size": True
+    }
+)
+```
+
+2. **Parallel Processing**
+```python
+from document_processor.core.optimization import ParallelProcessor
+
+# Initialize processor
+processor = ParallelProcessor(
+    optimizer=optimizer,
+    use_processes=True  # Use processes for CPU-bound tasks
+)
+
+# Process files in parallel
+results = await processor.process_in_parallel(
+    items=files,
+    processor_func=process_document,
+    checkpoint_key="batch_001"
+)
+```
+
+3. **Profile Management**
+```python
+from document_processor.core.optimization import BatchProfileManager
+
+# Initialize profile manager
+profile_manager = BatchProfileManager(
+    optimizer=optimizer,
+    profiles_dir="config/profiles"
+)
+
+# Load and apply profile
+profile = profile_manager.load_profile("high_performance")
+profile_manager.apply_profile(processor)
+```
+
+## Installation
+
+1. **Environment Setup**
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+.\venv\Scripts\activate   # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+2. **Development Installation**
+```bash
+# Install with development dependencies
+pip install -e ".[dev,test,docs]"
+```
+
+## Testing
+
+### Running Tests
+```bash
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=document_processor --cov-report=html
+
+# Run specific test categories
+pytest tests/test_processors/  # Process tests
+pytest tests/test_batch/      # Batch tests
+pytest tests/test_core/       # Core tests
+```
+
+### Test Categories
+- Unit tests: `pytest -m unit`
+- Integration tests: `pytest -m integration`
+- Performance tests: `pytest -m "not slow"`
+
+### Processor Testing Structure
+
+Each document processor follows a standardized testing structure to ensure consistent coverage and functionality:
+
+1. **Base Test Structure**
+   ```python
+   class BaseProcessorTest:
+       processor_class = None  # Set by subclass
+       file_extension = ""    # Set by subclass
+       
+       async def test_process_file(self):
+           """Test basic file processing."""
+           
+       async def test_process_invalid_file(self):
+           """Test handling of invalid files."""
+           
+       async def test_process_empty_file(self):
+           """Test handling of empty files."""
+           
+       async def test_process_with_custom_config(self):
+           """Test configuration handling."""
+           
+       async def test_batch_processing(self):
+           """Test batch processing capabilities."""
+           
+       async def test_resource_management(self):
+           """Test resource monitoring."""
+   ```
+
+2. **Test File Generation**
+   - Create test files programmatically
+   - Include various content types
+   - Test different formatting options
+   - Generate edge cases
+
+3. **Core Test Areas**
+   - File validation and loading
+   - Content extraction
+   - Structure preservation
+   - Metadata handling
+   - Resource monitoring
+   - Error handling
+   - Configuration management
+
+4. **Resource Monitoring**
+   - Memory usage tracking
+   - Processing time measurement
+   - Peak memory tracking
+   - Garbage collection
+   - Resource optimization
+
+5. **Format-Specific Tests**
+   Example for DOCX processor:
+   ```python
+   class TestDOCXProcessor(BaseProcessorTest):
+       processor_class = DOCXProcessor
+       file_extension = ".docx"
+       
+       async def test_docx_formatting(self):
+           """Test formatting preservation."""
+           
+       async def test_docx_tables(self):
+           """Test table extraction."""
+           
+       async def test_docx_sections(self):
+           """Test section/heading detection."""
+           
+       async def test_docx_entities(self):
+           """Test entity extraction."""
+           
+       async def test_docx_tags(self):
+           """Test tag generation."""
+           
+       async def test_docx_statistics(self):
+           """Test statistics generation."""
+           
+       async def test_docx_export(self):
+           """Test JSON export."""
+   ```
+
+6. **Coverage Goals**
+   - Minimum 75% code coverage per processor
+   - Core functionality fully covered
+   - Error cases and edge cases included
+   - Resource monitoring verified
+   - Configuration handling tested
+
+7. **Implementation Steps**
+   1. Create test file generator
+   2. Implement base test cases
+   3. Add format-specific tests
+   4. Add resource monitoring
+   5. Add error handling tests
+   6. Add export functionality tests
+
+8. **Test Data Requirements**
+   - Sample files with various content
+   - Different formatting options
+   - Tables and structured content
+   - Images and embedded objects
+   - Invalid and edge cases
+   - Large files for performance testing
+
+9. **Quality Metrics**
+   - Code coverage percentage
+   - Test execution time
+   - Memory usage patterns
+   - Error handling coverage
+   - Configuration coverage
+   - Resource optimization effectiveness
+
+## Development
+
+### Code Quality
+
+1. **Formatting**
+```bash
+# Format code
+black .
+isort .
+
+# Check style
+ruff check .
+pylint document_processor tests
+```
+
+2. **Type Checking**
+```bash
+# Run type checker
+mypy document_processor
+```
+
+3. **Security**
+```bash
+# Check for security issues
+bandit -r document_processor
+safety check
+```
+
+### Documentation
+
+1. **Building Docs**
+```bash
+# Generate documentation
+cd docs
+make html
+```
+
+2. **API Documentation**
+- Core API: `docs/api/core.rst`
+- Processors: `docs/api/processors.rst`
+- Utilities: `docs/api/utils.rst`
+
+## Configuration
+
+### Resource Management
+
+```python
+# config/settings.py
+RESOURCE_SETTINGS = {
+    "high_memory_threshold": 85.0,
+    "high_cpu_threshold": 90.0,
+    "io_rate_threshold": 100.0,  # MB/s
+    "metrics_interval": 1.0,
+    "metrics_history_size": 100
+}
+
+OPTIMIZATION_SETTINGS = {
+    "initial_workers": 4,
+    "min_workers": 1,
+    "max_workers": 8,
+    "initial_chunk_size": 1000,
+    "min_chunk_size": 500,
+    "max_chunk_size": 5000,
+    "batch_size": 10,
+    "io_throttle_delay": 0.1
+}
+```
+
+### Processing Profiles
+
+```json
+// config/profiles/high_performance.json
+{
+    "settings": {
+        "chunk_size": 2000,
+        "max_workers": 8,
+        "extract_images": true,
+        "preserve_formatting": true
+    },
+    "optimization": {
+        "adaptive_chunk_size": true,
+        "adaptive_workers": true,
+        "optimize_on_pressure": true
+    },
+    "hooks": {
+        "pre_process": ["validate_input", "check_resources"],
+        "post_process": ["collect_metrics", "cleanup_temp"]
+    }
+}
+```
+
+## Related Modules
+- [Sentiment Analysis](../sentiment_analysis/README.md) - Advanced sentiment analysis capabilities with emotion detection, aspect-based analysis, and contextual understanding
+
+## Current Status (2024-03-21)
+- Phase 1 (Core Processing): ✓ Completed
+- Phase 2 (Content Enhancement): ⟳ In Progress
+  - Environment Setup: ✓ Core Dependencies Resolved
+    * Successfully configured Python 3.8.18 environment
+    * Installed and verified core dependencies:
+      - spaCy 3.7.2 (compatible with Python 3.8)
+      - PyTorch 2.4.1 (with CUDA support)
+      - Transformers 4.45.2
+      - Pandas 2.0.3
+      - NumPy 1.24.4
+      - NLTK 3.9.1
+      - Gensim 4.3.3
+      - scikit-learn 1.3.2
+    * Additional packages installed:
+      - Document processing (python-docx, pypdf, etc.)
+      - Enhanced processing (unstructured, pdf2image, etc.)
+      - Calendar/Email processing (icalendar, html2text, etc.)
+      - Text processing (dateparser, ftfy, etc.)
+      - Machine learning tools (bertopic, sentence-transformers)
+    * Resolved all dependency conflicts
+    * Set up virtual environment for isolation
+  - Project Configuration: ✓ Completed
+    * Set up project-wide settings (settings.py)
+    * Configured logging with rotation and levels
+    * Created directory structure:
+      - /data: Document storage
+      - /models: Model artifacts
+      - /logs: Application logs
+    * Installed and verified spaCy models:
+      - en_core_web_sm (fast, lightweight)
+      - en_core_web_lg (more accurate)
+      - en_core_web_trf (transformer-based)
+    * All configuration tests passing
+  - Sentiment Analysis: ✓ Core Improvements Completed
+    * Fixed SubjectivityLevel analysis
+    * Enhanced confidence scoring system
+    * Improved pattern detection
+    * Enhanced mixed content handling
+  - Test coverage: 95%
+  - Passing tests: All core tests passing
+- Phase 3 (Export Optimization): Planned
+
+## Features
+
+### Document Format Support
+✓ **PDF Documents**
+- Text extraction with chunking and layout preservation
+- Metadata preservation and enhancement
+- Table and column structure detection
+- Image detection with OCR support
+- Memory and processing time tracking
+- Configurable optimization settings
+- Parallel processing support
+
+✓ **Microsoft Office**
+- DOCX: Rich text processing, style preservation, table extraction
+- XLSX: Multi-sheet processing, table structure detection, formula preservation
+- PPTX: Slide content extraction, shape and table processing, notes and comments
+
+✓ **Email & Calendar**
+- MBOX: Header extraction, attachment handling, HTML content processing
+- ICS: Event processing, recurrence handling, attendee management
+
+✓ **Web & Markup**
+- HTML/XML: Structure preservation, rich metadata extraction, table formatting
+- Markdown: Frontmatter parsing, code block extraction, link analysis
+
+✓ **Google Workspace Integration**
+- Native format support
+- Version history tracking
+- Collaboration metadata
+- User permissions tracking
+
+✓ **Batch Processing**
+- Parallel execution
+- Progress tracking
+- Resumable operations
+- Detailed reporting
+
+### Core Capabilities
+- Intelligent content extraction
+- Rich metadata preservation
+- Structure detection and maintenance
+- Entity recognition
+- Content categorization
+- Format-specific optimizations
+- Version tracking and history
+- Collaboration analysis
+- Batch processing optimization
+
+## Project Structure
+
+```
+document_processor/
+├── config/                 # Configuration files
+│   ├── logging_config.py   # Logging configuration
+│   └── settings.py         # Global settings
+├── document_processor/     # Main package
+│   ├── processors/        # Document processors
+│   │   ├── base_processor.py
+│   │   ├── pdf_processor.py
+│   │   ├── docx_processor.py
+│   │   ├── xlsx_processor.py
+│   │   ├── pptx_processor.py
+│   │   ├── mbox_processor.py
+│   │   ├── ics_processor.py
+│   │   ├── html_processor.py
+│   │   ├── markdown_processor.py
+│   │   ├── text_processor.py
+│   │   └── rtf_processor.py
+│   ├── batch/            # Batch processing
+│   │   ├── file_handler.py
+│   │   ├── optimized_processor.py
+│   │   └── processor.py
+│   ├── core/            # Core components
+│   │   ├── optimization.py
+│   │   └── resource_monitor.py
+│   ├── workspace/        # Google Workspace
+│   │   ├── processor.py
+│   │   └── version_tracker.py
+│   ├── extractors/       # Content extraction
+│   ├── transformers/     # Content transformation
+│   ├── validators/       # Content validation
+│   └── utils/           # Utility functions
+│       ├── checkpointing.py
+│       └── version_tracking.py
+├── data/                # Data directories
+│   ├── input/          # Input files
+│   ├── output/         # Processed outputs
+│   ├── temp/           # Temporary files
+│   └── test/           # Test data
+└── tests/              # Test suite
+    ├── test_batch/      # Batch processing tests
+    ├── test_core/       # Core component tests
+    ├── test_processors/ # Processor tests
+    ├── test_data/      # Test files
+    └── utils/          # Test utilities
+```
+
+## Requirements
+
+### Python Version
+- Python 3.12+ recommended (minimum 3.8)
+
+### Core Dependencies
+```toml
+python-dotenv>=1.0.0
+pydantic>=2.5.2
+rich>=13.7.0
+structlog>=23.2.0
+
+# LangChain Integration
+langchain-core>=0.1.0
+langchain-community>=0.0.16
+langchain-text-splitters>=0.0.1
+
+# Document Processing
+python-docx>=1.0.0
+pypdf>=3.17.1
+python-pptx>=0.6.21
+openpyxl>=3.1.2
+markdown>=3.7.0
+striprtf>=0.0.27
+
+# Enhanced Processing
+unstructured>=0.10.30
+pytesseract>=0.3.10
+tabula-py>=2.9.0
+beautifulsoup4>=4.12.2
+```
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd document_processor
+```
+
+2. Create and activate virtual environment:
+```bash
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# Linux/Mac
+python -m venv venv
+source venv/bin/activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Verify installation:
+```bash
+python tests/verify_install.py
+```
+
+## Usage Examples
+
+### Single File Processing
+
+```python
+from document_processor.processors import PDFProcessor, DOCXProcessor, XLSXProcessor
+
+# Process PDF with OCR and optimization
+pdf_processor = PDFProcessor(
+    optimize_images=True,
+    image_quality=75,
+    force_ocr=False,
+    skip_images=False
+)
+result = await pdf_processor.process_file("path/to/document.pdf")
+print(f"Content: {result['content']}")
+print(f"Tables detected: {result['metadata']['has_tables']}")
+print(f"Processing time: {result['metadata']['processing_time']:.2f}s")
+print(f"Memory usage: {result['metadata']['memory_usage']:.1f}MB")
+
+# Process DOCX
+docx_processor = DOCXProcessor()
+docx_docs = docx_processor.process_file("path/to/document.docx")
+
+# Process XLSX
+xlsx_processor = XLSXProcessor()
+xlsx_docs = xlsx_processor.process_file("path/to/spreadsheet.xlsx")
+```
+
+### Resource-Optimized Batch Processing
+
+```python
+import asyncio
+from document_processor.batch import OptimizedBatchProcessor
+from document_processor.core import ResourceMonitor
+
+async def process_documents():
+    # Initialize optimized processor with resource monitoring
+    processor = OptimizedBatchProcessor(
+        max_workers=4,
+        chunk_size=1000,
+        metrics_interval=1.0
+    )
+
+    # Process directory with resource optimization
+    metrics = await processor.process_directory(
+        input_dir="path/to/documents",
+        file_types=['.pdf', '.docx', '.xlsx'],
+        recursive=True
+    )
+
+    # Print processing statistics
+    print(f"Success rate: {metrics.success_rate}%")
+    print(f"Total files: {metrics.total_files}")
+    print(f"Failed files: {metrics.failed_files}")
+    print(f"Total chunks: {metrics.total_chunks}")
+    print(f"Processing time: {metrics.processing_time:.2f}s")
+
+    # Save metrics for analysis
+    processor.save_metrics("processing_metrics.json")
+
+# Run the processor
+asyncio.run(process_documents())
+```
+
+### Resource Monitoring
+
+```python
+from document_processor.core import ResourceMonitor
+
+# Initialize resource monitor
+monitor = ResourceMonitor(
+    high_memory_threshold=85.0,  # Trigger optimization at 85% memory usage
+    high_cpu_threshold=90.0,     # Trigger optimization at 90% CPU usage
+    metrics_history_size=100     # Keep last 100 metrics
+)
+
+# Get current metrics
+metrics = await monitor.get_metrics()
+print(f"Memory usage: {metrics.memory_percent:.1f}%")
+print(f"CPU usage: {metrics.cpu_percent:.1f}%")
+print(f"Disk usage: {metrics.disk_usage_percent:.1f}%")
+
+# Check resource pressure
+is_pressure, reason = monitor.check_resource_pressure()
+if is_pressure:
+    print(f"Resource pressure detected: {reason}")
+    recommendations = monitor.get_optimization_recommendations()
+    print("Optimization recommendations:", recommendations)
+
+# Save metrics history
+monitor.save_metrics("resource_metrics.json")
+```
+
+### Timeline Construction and Event Analysis
+
+```python
+from document_processor.semantic import RelationshipMapper
+from datetime import datetime
+
+# Initialize the mapper
+mapper = RelationshipMapper()
+
+# Process document with timeline extraction
+text = """
+The project started on January 15, 2024.
+Phase 1 was completed on February 1, 2024.
+We have weekly status meetings every Monday.
+The next major milestone is scheduled for March 15, 2024.
+"""
+
+# Extract timeline with reference date for relative dates
+reference_date = datetime.now()
+timeline = await mapper.construct_timeline(
+    text=text,
+    reference_date=reference_date,
+    related_docs=["project_plan.pdf", "status_report.docx"]
+)
+
+# Work with timeline events
+for event in timeline:
+    print(f"Event: {event.description}")
+    print(f"Date: {event.timestamp}")
+    print(f"Type: {event.event_type}")
+    print(f"Importance: {event.importance}")
+    
+    # Access rich metadata
+    if event.recurring:
+        print(f"Recurring: {event.frequency}")
+    if event.metadata.get("similar_events"):
+        print("Related Events:", event.metadata["similar_events"])
+    if event.duration:
+        print(f"Duration: {event.duration}")
+    print("---")
+
+### Semantic Analysis and Topic Modeling
+
+```python
+from document_processor.semantic import TopicAnalyzer, SpacyAnalyzer
+from document_processor.processors import TextProcessor
+
+# Initialize analyzers
+topic_analyzer = TopicAnalyzer(
+    sentence_model="all-MiniLM-L6-v2",
+    zero_shot_model="facebook/bart-large-mnli",
+    min_topic_size=5,
+    calculate_probabilities=True
+)
+
+semantic_analyzer = SpacyAnalyzer(
+    model="en_core_web_trf",
+    enable_transformer=True
+)
+
+# Process text content
+processor = TextProcessor()
+documents = processor.process_file("path/to/document.txt")
+
+# Extract topics and entities
+topics = await topic_analyzer.extract_topics(
+    texts=[doc.content for doc in documents],
+    max_topics=10
+)
+
+# Access topic information
+for topic_name, score, metadata in topics:
+    print(f"Topic: {topic_name} (Score: {score:.2f})")
+    print("Keywords:", metadata["keywords"])
+    print("Category:", metadata["category_type"])
+    print("Confidence Factors:", metadata["confidence_factors"])
+
+# Analyze entities and relationships
+entities = semantic_analyzer.extract_entities(documents[0].content)
+for entity in entities:
+    print(f"Entity: {entity.text} ({entity.label_})")
+    print("Confidence:", entity._.confidence)
+    print("Relationships:", entity._.relationships)
+```
+
+### Google Workspace Processing
+
+```python
+from document_processor.workspace import WorkspaceProcessor
+
+# Initialize processor
+processor = WorkspaceProcessor()
+
+# Process workspace files
+documents = processor.process_file("path/to/document")
+
+# Access version history
+for doc in documents:
+    version_info = doc.metadata['version_info']
+    collab_info = doc.metadata['collaboration_info']
+```
+
+## Testing
+
+The project uses pytest for testing with comprehensive test coverage across all components.
+
+### Running Tests
+
+```bash
+# Run all tests
+pytest
+
+# Run specific test categories
+pytest tests/test_processors/  # Process tests
+pytest tests/test_batch/      # Batch tests
+pytest tests/test_core/       # Core component tests
+
+# Run with coverage report
+pytest --cov=document_processor --cov-report=html
+
+# Run only unit tests
+pytest -m unit
+
+# Run only integration tests
+pytest -m integration
+
+# Run without slow tests
+pytest -m "not slow"
+```
+
+### Test Infrastructure
+
+The test suite is organized into several key areas:
+
+1. **Document Processors** (`tests/test_processors/`)
+   - PDF processing
+   - DOCX processing
+   - Text extraction
+   - Metadata handling
+
+2. **Batch Processing** (`tests/test_batch/`)
+   - Directory processing
+   - Resource optimization
+   - Progress tracking
+   - Error handling
+
+3. **Core Components** (`tests/test_core/`)
+   - NLP processing
+   - Entity extraction
+   - Text classification
+   - Sentiment analysis
+
+4. **Common Test Utilities** (`tests/conftest.py`)
+   - Shared fixtures
+   - Resource mocking
+   - Test data generation
+   - Cleanup utilities
+
+### Test Configuration
+
+Key test settings can be configured in `pytest.ini`:
+
+```ini
+[pytest]
+testpaths = tests
+python_files = test_*.py
+python_classes = Test*
+python_functions = test_*
+
+addopts =
+    --verbose
+    --strict-markers
+    --cov=.
+    --cov-report=term-missing
+    --cov-report=xml
+    --no-cov-on-fail
+    --cov-fail-under=80
+
+markers =
+    slow: marks tests as slow
+    integration: marks tests as integration tests
+    unit: marks tests as unit tests
+
+asyncio_mode = auto
+```
+
+### CI/CD Integration
+
+Tests are automatically run in the CI/CD pipeline on:
+- Every pull request
+- Merges to main branch
+- Nightly builds
+
+The pipeline:
+1. Runs all tests
+2. Generates coverage reports
+3. Performs code quality checks
+4. Validates documentation
+5. Checks dependency security
+
+## Configuration
+
+Key settings can be configured through:
+- Environment variables (`.env`)
+- Logging settings (`config/logging_config.py`)
+- Global settings (`config/settings.py`)
+
+### Key Settings
+```python
+# Document Processing
+CHUNK_SIZE = 1000          # Text chunk size
+CHUNK_OVERLAP = 200        # Chunk overlap size
+EXTRACT_COMMENTS = True    # Include document comments
+PRESERVE_STRUCTURE = True  # Maintain document structure
+
+# Resource Monitoring
+HIGH_MEMORY_THRESHOLD = 85.0  # Memory usage threshold (%)
+HIGH_CPU_THRESHOLD = 90.0     # CPU usage threshold (%)
+METRICS_INTERVAL = 1.0        # Metrics collection interval (seconds)
+METRICS_HISTORY_SIZE = 100    # Number of metrics to keep
+IO_RATE_THRESHOLD = 100       # I/O rate threshold (MB/s)
+
+# Batch Processing
+BATCH_SIZE = 100          # Files per batch
+MAX_WORKERS = 4           # Initial worker count
+MIN_WORKERS = 1           # Minimum worker count
+CHECKPOINT_INTERVAL = 50  # Save progress interval
+RESUME_ON_ERROR = True    # Auto-resume on failure
+
+# Resource Optimization
+ADAPTIVE_CHUNK_SIZE = True    # Enable dynamic chunk size
+ADAPTIVE_WORKERS = True       # Enable dynamic worker count
+OPTIMIZE_ON_PRESSURE = True   # Enable resource pressure handling
+THROTTLE_ON_PRESSURE = True   # Enable I/O throttling
+
+# Version Tracking
+TRACK_VERSIONS = True     # Enable version tracking
+TRACK_CONTRIBUTORS = True # Track document contributors
+STORE_HISTORY = True     # Store revision history
+MAX_HISTORY_SIZE = 100   # Maximum history entries
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Implement your changes
+4. Add or update tests
+5. Submit a pull request
+
+## License
+
+Proprietary - All rights reserved
+
+## Implementation Plan
+
+### Phase 1: Core Processing Optimization (Completed)
+✓ **Parallel Processing Optimization**
+- Implemented OptimizedBatchProcessor with resource-aware execution
+- Added dynamic worker pool management
+- Integrated process and thread executor support
+
+✓ **Progress Tracking and Resumability**
+- Added CheckpointManager for state persistence
+- Implemented resumable batch operations
+- Added detailed progress tracking
+
+✓ **Resource Monitoring and Optimization**
+- Added ResourceMonitor for system metrics tracking
+- Implemented adaptive resource optimization
+- Added memory and CPU pressure handling
+
+✓ **Batch Profiles Support**
+- Added BatchProfileManager for processing configurations
+- Implemented profile-based optimizations
+- Added customizable processing parameters
+
+### Phase 2: Content Enhancement (In Progress)
+✓ **Semantic Analysis**
+- Enhanced entity extraction with transformer models
+- Advanced topic modeling with BERTopic
+- Improved key phrase extraction with compound detection
+- Document structure analysis with boundary detection
+- Content categorization with hierarchical classification
+
+✓ **Entity Extraction**
+- Named entity recognition with transformer models
+- Custom entity type support with validation
+- Entity relationship mapping and disambiguation
+- Entity linking to knowledge bases
+
+✓ **Sentiment Analysis**
+- Document-level sentiment analysis
+- Aspect-based sentiment analysis with confidence scoring
+- Emotion detection with pattern recognition
+- Subjectivity analysis with granular classification
+  * Strong/Moderate Objective detection
+  * Strong/Moderate Subjective detection
+  * Mixed content handling
+  * Confidence scoring system
+  * Pattern-based recognition
+  * Context-aware analysis
+
+✓ **Relationship Mapping**
+- Content similarity analysis
+- Cross-document reference detection
+- Topic clustering with BERTopic
+- Advanced Timeline Construction
+  * Date extraction and parsing
+  * Relative date handling
+  * Recurring event detection
+  * Event relationship mapping
+  * Event importance scoring
+  * Duration tracking
+  * Rich metadata extraction
+- Citation mapping (In Development)
+
+### Phase 3: Export Optimization (Planned)
+- Vector Database Export (optimized chunking, embedding generation)
+- Export Compression (smart compression, incremental updates)
+- Export Validation (schema validation, integrity checks)
+
+## Version History
+
+- 0.8.0 - Enhanced Sentiment Analysis with Granular Subjectivity Detection
+- 0.7.0 - Added Advanced Timeline Construction and Event Analysis
+- 0.6.0 - Phase 2: Enhanced Semantic Analysis and Topic Modeling
+- 0.5.0 - Completed Phase 1: Core Processing Optimization
+- 0.4.0 - Added HTML/XML Processing with Structure Preservation
+- 0.3.0 - Added Calendar and Email Processing
+- 0.2.0 - Added XLSX and PPTX Processing
+- 0.1.0 - Initial Release with PDF Processing
